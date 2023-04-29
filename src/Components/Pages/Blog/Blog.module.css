@@ -1,0 +1,24 @@
+.container{
+    display: inline-table;
+    margin-top: 6rem;
+  
+}
+.container img{
+    margin: 3rem;
+    width: 15rem;
+    height: 20rem;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    border-radius: 10px;
+}
+.container img:hover{
+    transform: scale(1.1);
+}
+.bg{
+    position: absolute;
+    height: 80rem;
+    width: 98vw;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    background-size: cover;
+    background-image: url("https://w0.peakpx.com/wallpaper/165/747/HD-wallpaper-beautiful-landscape-digital-art.jpg");
+}
