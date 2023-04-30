@@ -1,0 +1,64 @@
+.icon{
+    padding:1rem 1rem 1rem 4rem ;
+    font-size: x-large;
+    row-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+ 
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(231, 227, 223);
+}
+.logo{
+    height: 3rem;
+    width: 3rem;
+    margin-left: 3rem;
+}
+.FisrtDiv{
+    width: 20rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+.link{
+    color: red;
+    text-decoration: none;
+}
+.name{
+    color: rgb(0, 0, 0);
+    margin-left: 1rem;
+}
+.Footertext{
+    text-align: center;
+    background-color: rgb(231, 227, 223);
+}
+@media  (max-width:930px){
+ .main{
+    display: flex;
+    flex-direction: column;
+
+ }
+ .icon{
+    padding:3rem 1rem 3rem 5rem ;
+    font-size: x-large;
+    row-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  
+ 
+}
+.FisrtDiv{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5px;
+   
+}
+
+}

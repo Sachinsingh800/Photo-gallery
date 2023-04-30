@@ -8,3 +8,22 @@
 .links{
     margin-right: 2rem;
 }
+.opt:active{
+color: red;
+}
+.opt{
+    text-decoration: none;
+    color: white;
+}
+.dropdown{
+    display: none;
+}
+@media (max-width:700px){
+    .opt{
+        display: none;
+    }
+    .dropdown{
+        display: unset;
+        margin-right: 3rem;
+    }
+}

@@ -24,7 +24,7 @@ const fadeIn = element=>{
 const fadeOut = element=>{
     gsap.to(element,1,{
         opacity:0,
-        y:-20,
+        y:-50,
         ease:"power4.out",
     })
 }
