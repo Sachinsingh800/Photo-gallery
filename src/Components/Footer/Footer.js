@@ -15,7 +15,7 @@ export default function Footer() {
     <div className={style.FisrtDiv}>
     <img className={style.logo} src={Image} />
       <h4>
-      Cricket Live
+      PhotoGallery
       </h4>
       </div>    
 <div className={style.icon}>

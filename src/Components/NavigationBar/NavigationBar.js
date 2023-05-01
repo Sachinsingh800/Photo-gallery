@@ -5,17 +5,26 @@ import style from "./NavigationBar.module.css"
 import Image from "../../asset/logo.png"
 import { Link } from "react-scroll";
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useNavigate } from 'react-router-dom';
 
 function NavigationBar() {
+  const navigate= useNavigate()
+
+  function navigatePage(){
+    navigate("/Registration")
+  }
+  function navigateToHomePage(){
+    navigate("/")
+  }
   return (
     <Navbar  className={style.main}>
        <Container className={style.Container}>
-       <Link  activeClass="active" to="/" spy={true}  ><img className={style.image} src={Image} alt='logo'/></Link>
+       <span onClick={navigateToHomePage}><img className={style.image} src={Image} alt='logo'/>PhotoGallery</span>
        </Container>
        <Container className={style.links}>
        <Link className={style.opt} activeClass="active" to="/" spy={true}  ><h5>Home</h5></Link> 
        <Link className={style.opt} activeClass="active" to="Blog" spy={true}  ><h5>Gallery</h5></Link> 
-       <Link className={style.opt} activeClass="active" to="Blog" spy={true}  ><h5>Login</h5></Link> 
+       <h5 onClick={navigatePage}>Registartion</h5>
         
        </Container>
        <NavDropdown className={style.dropdown}  title="📸" id="basic-nav-dropdown">

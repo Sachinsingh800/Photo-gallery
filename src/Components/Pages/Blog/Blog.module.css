@@ -31,7 +31,7 @@
         border-radius: 10px;
     }
 }
-@media (max-width:700px){
+@media (max-width:500px){
     .container img{
         margin: 3rem;
         width: 18rem;
