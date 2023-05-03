@@ -21,7 +21,7 @@ export default function Footer() {
 <div className={style.icon}>
 
 <h4>Mobile  and Apps</h4>
-  <Link className={style.link} to="https://www.facebook.com/"><AiOutlineGlobal/><span className={style.name} >Cricket-Live.com</span> </Link>
+  <Link className={style.link} to="https://www.facebook.com/"><AiOutlineGlobal/><span className={style.name} >PhotoGallery.com</span> </Link>
 
 
 <Link className={style.link}  to="https://www.instagram.com/"><AiFillAndroid/><span className={style.name} >Android</span></Link>
@@ -53,7 +53,7 @@ export default function Footer() {
 
 <span className={style.name} >Privacy Policy</span>
 
-<span  className={style.name} >Cricket Live Tv Ads</span>
+<span  className={style.name} >PhotoGallery Tv Ads</span>
 </div> 
    
     </div>

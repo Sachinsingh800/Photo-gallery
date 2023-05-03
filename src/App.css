@@ -1,6 +1,5 @@
 .App {
-  background-image: url("https://images.pexels.com/photos/18495/pexels-photo.jpg?cs=srgb&dl=pexels-omar-alnahi-18495.jpg&fm=jpg");
-  background-size: cover;
+  background-color: black;
   height: 100vh;
 }
 

@@ -4,19 +4,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 2px red solid; */
 }
 .container{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50rem;
-    color: white;
+    width: 40rem;
     /* border: 1px red solid; */
-   font-size: 44px;
+    color: white;
+   font-size: 30px;
    height: 20rem;
-   backdrop-filter: blur(8px);
    font-family: 'Castoro Titling', cursive;
+   margin-right: 3rem;
 }
 .container {
     -webkit-animation-name: fadeInUp;

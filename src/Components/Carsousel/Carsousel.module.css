@@ -2,3 +2,6 @@
     height: 30rem;
     width: 100vw;
 }
+.Caption{
+    backdrop-filter: blur(8px);
+}
