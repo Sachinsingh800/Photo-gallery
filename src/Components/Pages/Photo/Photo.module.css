@@ -22,6 +22,11 @@
 .nav{
     width: 100vw;
 }
+.uploadblock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .icon{
     height: 2rem;
 }
@@ -44,6 +49,16 @@
 }
 .form textarea{
     height: 8rem;
+    outline: none;
+    font-weight: 700;
+    font-size: medium;
+    padding: 0.5rem;
+}
+.form input{
+    outline: none;
+    font-weight: 700;
+    font-size: medium;
+    padding: 0.5rem;
 }
 .submit{
     width: 8rem;
@@ -54,3 +69,33 @@
 .submit:hover{
     background-color: aqua;
 }
+
+.container {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes zoomIn {
+    0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+    }
+    50% {
+    opacity: 1;
+    }
+    }
+    @keyframes zoomIn {
+    0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+    }
+    50% {
+    opacity: 1;
+    }
+    } 
+  
