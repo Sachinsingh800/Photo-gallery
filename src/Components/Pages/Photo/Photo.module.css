@@ -26,7 +26,7 @@
     height: 2rem;
 }
 .container{
-    border: 2px red solid;
+    /* border: 2px red solid; */
     align-items: center;
     display: flex;
     width: 100vw;
@@ -34,11 +34,23 @@
     justify-content: space-around;
 }
 .form{
-    border: 2px green solid;
+    /* border: 2px green solid; */
     display: flex;
     flex-direction: column;
     width: 40rem;
     height: 33rem;
     padding: 1rem;
     row-gap: 1rem;
+}
+.form textarea{
+    height: 8rem;
+}
+.submit{
+    width: 8rem;
+    height: 3rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+}
+.submit:hover{
+    background-color: aqua;
 }

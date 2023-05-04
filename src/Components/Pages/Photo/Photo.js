@@ -27,6 +27,7 @@ function Photo() {
         <input id='Name' placeholder='write name of your photo'  />
         <label htmlFor="Discription">Discription</label>
         <textarea id='Discription' placeholder='write something about your photo'  />
+        <button className={style.submit}>Submit</button>
       </form>
         </div>
      
