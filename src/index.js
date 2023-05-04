@@ -10,6 +10,7 @@ import {
 import Blog from './Components/Pages/Blog/Blog';
 import Registration from './Registartion/Registration';
 import Contact from './Components/Pages/Contact/Contact';
+import Photo from './Components/Pages/Photo/Photo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/Contact",
     element: <Contact />,
+  },
+  {
+    path: "/Photo",
+    element: <Photo />,
   },
 ]);
 root.render(

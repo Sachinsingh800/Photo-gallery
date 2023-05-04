@@ -11,11 +11,6 @@ import { useState } from "react";
 function NavigationBar() {
   const navigate = useNavigate();
 
-  const [activeLink, setActiveLink] = useState("");
-  
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
-  };
 
   function navigatePage() {
     navigate("/Registration");
@@ -25,6 +20,9 @@ function NavigationBar() {
   }
   function navigatePagetocontact() {
     navigate("/Contact");
+  }
+  function navigatePagetoPhoto() {
+    navigate("/Photo");
   }
   return (
     <Navbar className={style.main}>
@@ -36,8 +34,7 @@ function NavigationBar() {
       </Container>
       <Container className={style.links}>
         <Link
-          onClick={() => handleLinkClick("home")}
-          className={style.activeLink === "home" ? "active" : "opt"}
+          className={style.opt}
           activeClass="active"
           to="/"
           spy={true}
@@ -47,6 +44,9 @@ function NavigationBar() {
         <Link className={style.opt} activeClass="active" to="Blog" spy={true}>
           <h5>Gallery</h5>
         </Link>
+        <h5 className={style.opt} onClick={navigatePagetoPhoto}>
+          Photo
+        </h5>
         <h5 className={style.opt} onClick={navigatePage}>
           Registartion
         </h5>
