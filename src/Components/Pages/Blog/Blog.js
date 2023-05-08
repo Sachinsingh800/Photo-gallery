@@ -1,8 +1,9 @@
-import React ,{useRef} from 'react'
+import React ,{useRef ,useState,useEffect} from 'react'
 import UncontrolledExample from '../../Carsousel/Carsousel'
 import style from "./Blog.module.css"
 import { gsap } from 'gsap'
 import { useIntersection } from 'react-use'
+import postservice from '../Photo/postservice'
 
 function Blog() {
     const sectionRef = useRef(null)
@@ -30,23 +31,35 @@ const fadeOut = element=>{
 }
 
 intersection && intersection.intersectionRatio < 0.2 ? fadeOut("#header") : fadeIn("#header")
+
+
+const [posts, setPost] = useState([]);
+console.log(posts)
+  const fetchPosts = async () => {
+    let x=await postservice.getPosts()
+    setPost(x.data.data);
+  };
+  useEffect(() => {
+    fetchPosts();
+  }, [posts]);
+  const deletePost=async(id,e)=>{
+   var res=await postservice.deletePosts(id)
+   if(res.data.success==true){
+       alert(res.data.message)
+       document.getElementById(id).parentElement.parentElement.remove()
+   }else{
+    alert(res.data.message)
+   }
+  }//http://localhost:8000/api/postImages${post.image}
+
   return (
     <div className={style.main}>
       <UncontrolledExample />
       <div className={style.bg}>helloookooojioj</div>
       <div  id='header' ref={sectionRef} className={style.container}>
-         <img src='https://source.unsplash.com/random/700*500/?naturewallpaper' />
-         <img src='https://source.unsplash.com/random/700*500/?cat' />
-         <img src='https://source.unsplash.com/random/700*500/?mountainwallpaper' />
-         <img src='https://source.unsplash.com/random/700*500/?portait' />
-         <img src='https://source.unsplash.com/random/700*500/?landscape' />
-         <img src='https://source.unsplash.com/random/700*500/?abstractwallpaper' />
-         <img src='https://source.unsplash.com/random/700*500/?citywallpaper' />
-         <img src='https://source.unsplash.com/random/700*500/?dogwallpaper' />
-         <img src='https://source.unsplash.com/random/700*500/?anime' />
-         <img src='https://source.unsplash.com/random/700*500/?foodwallpaper' />
-         <img src='https://source.unsplash.com/random/700*500/?cartoon' />
-         <img src='https://source.unsplash.com/random/700*500/?cutewallpaper' />
+{posts.map((item)=>{
+  return <img src={`http://localhost:8000/api/postImages/${item.image}`} />
+})}
       </div>
     </div>
   )

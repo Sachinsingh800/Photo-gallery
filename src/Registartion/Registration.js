@@ -8,7 +8,7 @@ import NavigationBar from '../Components/NavigationBar/NavigationBar';
 
 function Registration() {
     const [email, setEmail] = useState(" ")
-    const [password, setPassword] = useState(" ")
+    const [password, setPassword] = useState(null)
 
 
     function submit(e){

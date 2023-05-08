@@ -3,10 +3,10 @@ import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import style from "./NavigationBar.module.css";
 import Image from "../../asset/logo.png";
-import { Link } from "react-scroll";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 
 function NavigationBar() {
   const navigate = useNavigate();
@@ -33,26 +33,47 @@ function NavigationBar() {
         </span>
       </Container>
       <Container className={style.links}>
-        <Link
-          className={style.opt}
-          activeClass="active"
+      <NavLink
           to="/"
-          spy={true}
+          style={({ isActive }) => ({
+            color: isActive ? 'greenyellow' : 'white',
+          })}
         >
-          <h5>Home</h5>
-        </Link>
-        <Link className={style.opt} activeClass="active" to="Blog" spy={true}>
-          <h5>Gallery</h5>
-        </Link>
-        <h5 className={style.opt} onClick={navigatePagetoPhoto}>
+          Home
+        </NavLink>
+      <NavLink
+          to="/Blog"
+          style={({ isActive }) => ({
+            color: isActive ? 'greenyellow' : 'white',
+          })}
+        >
+          Gallery
+        </NavLink>
+      <NavLink
+          to="/Photo"
+          style={({ isActive }) => ({
+            color: isActive ? 'greenyellow' : 'white',
+          })}
+        >
           Photo
-        </h5>
-        <h5 className={style.opt} onClick={navigatePage}>
+        </NavLink>
+      <NavLink
+          to="/Registration"
+          style={({ isActive }) => ({
+            color: isActive ? 'greenyellow' : 'white',
+          })}
+        >
           Registartion
-        </h5>
-        <h5 className={style.opt} onClick={navigatePagetocontact}>
+        </NavLink>
+      <NavLink
+          to="/Contact"
+          style={({ isActive }) => ({
+            color: isActive ? 'greenyellow' : 'white',
+          })}
+        >
           Contact
-        </h5>
+        </NavLink>
+      
       </Container>
       <NavDropdown
         className={style.dropdown}
