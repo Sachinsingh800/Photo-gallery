@@ -10,9 +10,14 @@ function Photo() {
   const [discription,setDiscription] = useState("")
   const [date, setDate] = useState("")
   const [message,setMessage] = useState("")
+  const [preview,setPreview] = useState(null)
 
-
-  console.log(title,discription,image)
+function handleImage(e){
+  setImage(e.target.files[0])
+  if (e.target.files[0]) {
+    setPreview(URL.createObjectURL(e.target.files[0]));
+  }
+}
 
 async function handleSubmit(e){
   e.preventDefault()
@@ -44,8 +49,8 @@ async function handleSubmit(e){
       </div>
       <div className={style.container}>
         <div className={style.imgContainer}>
-          {image ? (
-            <img className={style.image} src={image} alt="preview image" />
+          {preview ? (
+            <img className={style.image} src={preview} alt="preview image" />
           ) : (
             <div className={style.uploadblock}>
               <label htmlFor="image">
@@ -56,7 +61,7 @@ async function handleSubmit(e){
                 hidden
                 type="file"
                 name="image"
-                onChange={(e)=>setImage(e.target.files[0])}
+                onChange={handleImage}
                 className="filetype"
               />
               <label htmlFor="image">
