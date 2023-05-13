@@ -29,6 +29,7 @@ async function handleSubmit(e){
   const res=await postservice.create(formData)
   if(res.data.success==true){
       setMessage("Post created successfully")
+      setPreview(null)
   }else{
       setMessage("Post Failed!")
   }
@@ -36,7 +37,7 @@ async function handleSubmit(e){
       setMessage(" ")
   },2000)
   e.target.reset()
-setPreview(null)
+
 }
 
 

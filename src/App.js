@@ -11,7 +11,7 @@ function App() {
      <NavigationBar /> 
      <div id='home'><HomePage /></div>  
        <div id='blog'><Blog /></div> 
-        <div><Footer /></div> 
+        <div className='footer'><Footer /></div> 
     </div>
   );
 }

@@ -1,11 +1,37 @@
 import React ,{useRef ,useState,useEffect} from 'react'
 import UncontrolledExample from '../../Carsousel/Carsousel'
-import style from "./Blog.module.css"
+import Style from "./Blog.module.css"
 import { gsap } from 'gsap'
 import { useIntersection } from 'react-use'
 import postservice from '../Photo/postservice'
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
+
+
 
 function Blog() {
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: "100vw",
+    height:"100vh",
+    p: 4,
+  };
+  const [posts, setPost] = useState([]);
+  const [open, setOpen] = React.useState(false);
+  const [preview,setPreview] = useState([])
+  console.log(preview)
+  const handleOpen = (id) => {
+    setOpen(true);
+   let newpreview=posts.filter((item)=> item._id === id) 
+   setPreview(newpreview)
+  }
+  const handleClose = () => setOpen(false);
     const sectionRef = useRef(null)
 
 const intersection = useIntersection(sectionRef, {
@@ -33,7 +59,7 @@ const fadeOut = element=>{
 intersection && intersection.intersectionRatio < 0.2 ? fadeOut("#header") : fadeIn("#header")
 
 
-const [posts, setPost] = useState([]);
+
 console.log(posts)
   const fetchPosts = async () => {
     let x=await postservice.getPosts()
@@ -52,8 +78,6 @@ console.log(posts)
     alert(res.data.message)
    }
   }
-//http://localhost:8000/api/postImages${post.image}
-
 
 
   return (
@@ -63,8 +87,37 @@ console.log(posts)
       <div  id='header' ref={sectionRef} className={style.container}>
 {posts.map((item)=>
 <>
-<img src={`http://localhost:8000/api/postImages/${item.image}`} />
-<button id={item._id} onClick={(e)=>deletePost(item._id,e)}>Delete</button>
+ <div style={{display:"inline-table",marginTop:"70px"}}>
+ <div>
+      <Button onClick={(e)=>handleOpen(item._id,e)} id={item._id}><img className={Style.img} src={`http://localhost:8000/api/postImages/${item.image}`} /></Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            <div className={Style.buttons}>
+            <button  id={item._id} onClick={(e)=>deletePost(item._id,e)}>Delete</button>
+          <button onClick={handleClose}>X</button>
+            </div>
+          
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          
+          <div className={Style.box}>
+            {preview.map((elem)=>
+             <img className={Style.img2} src={`http://localhost:8000/api/postImages/${elem.image}`} />
+            )}
+         </div>
+          </Typography>
+        </Box>
+      </Modal>
+    </div>
+  </div>
+
+
 </>
 
 )}
