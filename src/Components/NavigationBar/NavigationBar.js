@@ -5,7 +5,7 @@ import style from "./NavigationBar.module.css";
 import Image from "../../asset/logo.png";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 
 
 function NavigationBar() {
@@ -33,47 +33,12 @@ function NavigationBar() {
         </span>
       </Container>
       <Container className={style.links}>
-      <NavLink
-          to="/"
-          style={({ isActive }) => ({
-            color: isActive ? 'greenyellow' : 'white',
-          })}
-        >
-          Home
-        </NavLink>
-      <NavLink
-          to="/Blog"
-          style={({ isActive }) => ({
-            color: isActive ? 'greenyellow' : 'white',
-          })}
-        >
-          Gallery
-        </NavLink>
-      <NavLink
-          to="/Photo"
-          style={({ isActive }) => ({
-            color: isActive ? 'greenyellow' : 'white',
-          })}
-        >
-          Photo
-        </NavLink>
-      <NavLink
-          to="/Registration"
-          style={({ isActive }) => ({
-            color: isActive ? 'greenyellow' : 'white',
-          })}
-        >
-          Registartion
-        </NavLink>
-      <NavLink
-          to="/Contact"
-          style={({ isActive }) => ({
-            color: isActive ? 'greenyellow' : 'white',
-          })}
-        >
-          Contact
-        </NavLink>
-      
+      <h6 onClick={navigateToHomePage}>Home</h6>
+      <Link  to="blog" >
+          <h6>Gallery</h6>  
+        </Link>
+        <h6 onClick={navigatePagetoPhoto}>Photo</h6>
+        <h6 onClick={navigatePage}>Registartion</h6>
       </Container>
       <NavDropdown
         className={style.dropdown}

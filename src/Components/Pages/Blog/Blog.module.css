@@ -1,7 +1,7 @@
 .container{
     display: inline-table;
     margin-top: 6rem;
-  cursor: pointer;
+     cursor: pointer;
 }
 .container img{
     margin: 3rem;

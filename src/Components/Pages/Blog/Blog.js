@@ -42,6 +42,7 @@ console.log(posts)
   useEffect(() => {
     fetchPosts();
   }, [posts]);
+
   const deletePost=async(id,e)=>{
    var res=await postservice.deletePosts(id)
    if(res.data.success==true){
@@ -50,17 +51,25 @@ console.log(posts)
    }else{
     alert(res.data.message)
    }
-  }//http://localhost:8000/api/postImages${post.image}
+  }
+//http://localhost:8000/api/postImages${post.image}
+
+
 
   return (
     <div className={style.main}>
       <UncontrolledExample />
-      <div className={style.bg}>helloookooojioj</div>
+      <div className={style.bg}></div>
       <div  id='header' ref={sectionRef} className={style.container}>
-{posts.map((item)=>{
-  return <img src={`http://localhost:8000/api/postImages/${item.image}`} />
-})}
+{posts.map((item)=>
+<>
+<img src={`http://localhost:8000/api/postImages/${item.image}`} />
+<button id={item._id} onClick={(e)=>deletePost(item._id,e)}>Delete</button>
+</>
+
+)}
       </div>
+
     </div>
   )
 }

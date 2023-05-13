@@ -36,7 +36,7 @@ async function handleSubmit(e){
       setMessage(" ")
   },2000)
   e.target.reset()
-
+setPreview(null)
 }
 
 
