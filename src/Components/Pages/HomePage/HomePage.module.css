@@ -66,5 +66,26 @@
         .main{
             display: flex;
             flex-direction: column;
+            height: 100vh;
+            background-color: black;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 15rem;
+            /* border: 1px red solid; */
+            color: white;
+           font-size: small;
+           font-family: 'Castoro Titling', cursive;
+           gap: 1rem;
+           margin-left: 1rem;
+        }
+        .getstart{
+            font-size: small;
+            padding: 0;
+            height: 1rem;
+            width: 6rem;
         }
     }
