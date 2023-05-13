@@ -86,7 +86,7 @@
             font-size: small;
             padding: 0;
             height: 2rem;
-            width: 6rem;
+            width: 12rem;
         }
         .video{
            width: 40rem;
@@ -94,6 +94,6 @@
            display: flex;
            justify-content: center;
            align-items: center;
-           margin-top: -10rem;
+           margin-top: -15rem;
         }
     }
