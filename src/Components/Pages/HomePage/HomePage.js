@@ -16,7 +16,7 @@ function navigatetoPhoto(){
     <div className={style.main}>
    
  <div  className={style.video}>
- <ReactPlayer url={Video} playing={true} controls={false} loop={true} muted={true} />
+ <ReactPlayer  url={Video} playing={true} controls={false} loop={true} muted={true} />
  </div>
    
 
