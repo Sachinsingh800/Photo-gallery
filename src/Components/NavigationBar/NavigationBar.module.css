@@ -9,13 +9,7 @@
 .links{
     margin-right: 2rem;
 }
-.opt:active{
-color: red;
-}
-.opt{
-    text-decoration: none;
-    color: white;
-}
+
 .opt:hover{
 color: blue;
 }
@@ -29,6 +23,6 @@ color: blue;
     }
     .dropdown{
         display: unset;
-        margin-right: 3rem;
+        margin-right: 8rem;
     }
 }

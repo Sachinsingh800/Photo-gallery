@@ -33,12 +33,12 @@ function NavigationBar() {
         </span>
       </Container>
       <Container className={style.links}>
-      <h6 onClick={navigateToHomePage}>Home</h6>
-      <Link  to="blog" >
+      <h6 className={style.opt} onClick={navigateToHomePage}>Home</h6>
+      <Link  to="blog" className={style.opt}  >
           <h6>Gallery</h6>  
         </Link>
-        <h6 onClick={navigatePagetoPhoto}>Photo</h6>
-        <h6 onClick={navigatePage}>Registartion</h6>
+        <h6 onClick={navigatePagetoPhoto} className={style.opt} >Photo</h6>
+        <h6 onClick={navigatePage} className={style.opt} >Registartion</h6>
       </Container>
       <NavDropdown
         className={style.dropdown}
