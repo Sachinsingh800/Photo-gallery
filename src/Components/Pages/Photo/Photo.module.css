@@ -98,4 +98,48 @@
     opacity: 1;
     }
     } 
-  
+  @media (max-width:900px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .imgContainer{
+        border: 2px white  dotted;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40rem;
+        height: 33rem;
+        margin-top: 20rem;
+    }
+    .main{
+        background-color: black;
+        height: 150vh;
+        flex-wrap: wrap;
+    }
+
+}
+  @media (max-width:658px){
+    html{
+        font-size: 10px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .imgContainer{
+        border: 2px white  dotted;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40rem;
+        height: 33rem;
+        margin-top: 20rem;
+    }
+    .main{
+        background-color: black;
+        height: 150vh;
+        flex-wrap: wrap;
+    }
+
+  }
