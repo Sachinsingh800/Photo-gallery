@@ -9,19 +9,22 @@ import NavigationBar from '../Components/NavigationBar/NavigationBar';
 function Registration() {
     const [email, setEmail] = useState(" ")
     const [password, setPassword] = useState(null)
+    const [name, setName] = useState("")
 
 
     function submit(e){
         e.preventDefault()
         const obj={
+            name,
             email,
             password,
         }
-    axios.post("http://localhost:9002/register",obj)
+    axios.post("http://localhost:8080/api/register",obj)
     .then((res)=>console.log(res))
     alert("successsfully")
     setEmail(" ")
     setPassword(" ")
+    setName(" ")
     }
 
   return (
@@ -33,6 +36,9 @@ function Registration() {
    
     <Form  className={style.form}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Name</Form.Label>
+        <Form.Control onChange={(e)=>setName(e.target.value)} value={name} type="name" placeholder="Enter name" />
+
         <Form.Label>Email address</Form.Label>
         <Form.Control onChange={(e)=>setEmail(e.target.value)} value={email} type="email" placeholder="Enter email" />
         <Form.Text className="text-muted">

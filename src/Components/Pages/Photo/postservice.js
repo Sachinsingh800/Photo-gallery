@@ -18,6 +18,10 @@ class Post{
         const url="https://photoserver.onrender.com/api/delete-post/"+id;
       return axios.get(url)
     }
+    register(formData){
+        const url="https://photoserver.onrender.com/api/register";
+      return axios.get(url)
+    }
     update(formData){
       const url="http://localhost:8080/api/update-post";
       const config={
