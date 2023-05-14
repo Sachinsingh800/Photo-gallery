@@ -2,7 +2,7 @@ import axios from "axios"
 
 class Post{
     create(formData){
-        const url="http://localhost:8080/api/create-post";
+        const url="https://photoserver.onrender.com/api/create-post";
         const config={
              headers:{
                 "content-type":"multipart/form-data",
@@ -15,7 +15,7 @@ class Post{
       return axios.get(url)
     }
     deletePosts(id){
-        const url="http://localhost:8080/api/delete-post/"+id;
+        const url="https://photoserver.onrender.com/api/delete-post/"+id;
       return axios.get(url)
     }
     update(formData){
