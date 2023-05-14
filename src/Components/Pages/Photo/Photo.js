@@ -30,6 +30,9 @@ async function handleSubmit(e){
   if(res.data.success==true){
       setMessage("Post created successfully")
       setPreview(null)
+      setDate("")
+      setDiscription("")
+      setTitle("")
   }else{
       setMessage("Post Failed!")
   }
