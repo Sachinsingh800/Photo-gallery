@@ -59,8 +59,6 @@ const fadeOut = element=>{
 intersection && intersection.intersectionRatio < 0.2 ? fadeOut("#header") : fadeIn("#header")
 
 
-
-console.log(posts)
   const fetchPosts = async () => {
     let x=await postservice.getPosts()
     setPost(x.data.data);
@@ -73,6 +71,7 @@ console.log(posts)
    var res=await postservice.deletePosts(id)
    if(res.data.success==true){
        alert(res.data.message)
+       setOpen(false)
        document.getElementById(id).parentElement.parentElement.remove()
    }else{
     alert(res.data.message)
@@ -87,9 +86,11 @@ console.log(posts)
       <div  id='header' ref={sectionRef} className={style.container}>
 {posts.map((item)=>
 <>
+
  <div style={{display:"inline-table",marginTop:"70px"}}>
  <div>
-      <Button onClick={(e)=>handleOpen(item._id,e)} id={item._id}><img className={Style.img} src={`http://localhost:8000/api/postImages/${item.image}`} /></Button>
+      <Button onClick={(e)=>handleOpen(item._id,e)} id={item._id}><img className={Style.img} src={`http://localhost:8080/api/postImages/${item.image}`} /></Button>
+  
       <Modal
         open={open}
         onClose={handleClose}
@@ -108,7 +109,9 @@ console.log(posts)
           
           <div className={Style.box}>
             {preview.map((elem)=>
-             <img className={Style.img2} src={`http://localhost:8000/api/postImages/${elem.image}`} />
+            <>
+             <img className={Style.img2} src={`http://localhost:8080/api/postImages/${elem.image}`} />
+             </>
             )}
          </div>
           </Typography>

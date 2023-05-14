@@ -121,7 +121,7 @@
 }
   @media (max-width:658px){
     html{
-        font-size: 10px;
+        font-size: 8px;
     }
     .container{
         display: flex;
@@ -134,7 +134,7 @@
         justify-content: center;
         width: 40rem;
         height: 33rem;
-        margin-top: 20rem;
+        margin-top: -3rem;
     }
     .main{
         background-color: black;
