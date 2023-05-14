@@ -2,7 +2,7 @@ import axios from "axios"
 
 class Post{
     create(formData){
-        const url="http://localhost:8080/api/create-post";
+        const url="https://photoserver.onrender.com/api/create-post";
         const config={
              headers:{
                 "content-type":"multipart/form-data",
