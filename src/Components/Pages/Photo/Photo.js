@@ -60,6 +60,7 @@ async function handleSubmit(e){
               <input
                 id="image"
                 hidden
+                required
                 type="file"
                 name="image"
                 onChange={handleImage}
@@ -73,7 +74,7 @@ async function handleSubmit(e){
         </div>
         <form className={style.form}>
           <label htmlFor="Name">Name </label>
-          <input value={title} type="text" name="title" onChange={(e)=>setTitle(e.target.value)} id="Name" placeholder="write name of your photo" />
+          <input  required value={title} type="text" name="title" onChange={(e)=>setTitle(e.target.value)} id="Name" placeholder="write name of your photo" />
           <label htmlFor="Discription">Discription</label>
           <textarea
            value={discription} onChange={(e)=>setDiscription(e.target.value)}
@@ -84,7 +85,7 @@ async function handleSubmit(e){
             placeholder="write something about your photo"
           />
          
-         <input  value={date} onChange={(e)=>setDate(e.target.value)} name="date" type="date" placeholder="date" />
+         <input  required value={date} onChange={(e)=>setDate(e.target.value)} name="date" type="date" placeholder="date" />
          <h1>{message}</h1>
           <button onClick={handleSubmit}  className={style.submit}>Submit</button>
         </form>
