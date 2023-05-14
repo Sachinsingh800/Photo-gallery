@@ -89,7 +89,7 @@ intersection && intersection.intersectionRatio < 0.2 ? fadeOut("#header") : fade
 
  <div style={{display:"inline-table",marginTop:"70px"}}>
  <div>
-      <Button onClick={(e)=>handleOpen(item._id,e)} id={item._id}><img className={Style.img} src={`http://localhost:8080/api/postImages/${item.image}`} /></Button>
+      <Button onClick={(e)=>handleOpen(item._id,e)} id={item._id}><img className={Style.img} src={`https://photoserver.onrender.com/api/postImages/${item.image}`} /></Button>
   
       <Modal
         open={open}
@@ -110,7 +110,7 @@ intersection && intersection.intersectionRatio < 0.2 ? fadeOut("#header") : fade
           <div className={Style.box}>
             {preview.map((elem)=>
             <>
-             <img className={Style.img2} src={`http://localhost:8080/api/postImages/${elem.image}`} />
+             <img className={Style.img2} src={`https://photoserver.onrender.com/api/postImages/${elem.image}`} />
              </>
             )}
          </div>
