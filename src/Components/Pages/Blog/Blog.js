@@ -34,29 +34,29 @@ function Blog() {
   const handleClose = () => setOpen(false);
     const sectionRef = useRef(null)
 
-// const intersection = useIntersection(sectionRef, {
-//     root:null,
-//     rootMargin:"0px",
-//     threshold:0.2
-// })
+const intersection = useIntersection(sectionRef, {
+    root:null,
+    rootMargin:"0px",
+    threshold:0.2
+})
 
-// const fadeIn = element=>{
-//     gsap.to(element,1,{
-//         opacity:1,
-//         y:-60,
-//         ease:"power4.out",
-//     }
-//     )
-// }
-// const fadeOut = element=>{
-//     gsap.to(element,1,{
-//         opacity:0,
-//         y:-50,
-//         ease:"power4.out",
-//     })
-// }
+const fadeIn = element=>{
+    gsap.to(element,1,{
+        opacity:1,
+        y:-60,
+        ease:"power4.out",
+    }
+    )
+}
+const fadeOut = element=>{
+    gsap.to(element,1,{
+        opacity:0,
+        y:-50,
+        ease:"power4.out",
+    })
+}
 
-// intersection && intersection.intersectionRatio < 0.2 ? fadeOut("#header") : fadeIn("#header")
+intersection && intersection.intersectionRatio < 0.2 ? fadeOut("#header") : fadeIn("#header")
 
 
   const fetchPosts = async () => {

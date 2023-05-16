@@ -16,10 +16,10 @@ function NavigationBar() {
     navigate("/Registration");
   }
   function navigateToHomePage() {
-    navigate("/");
+    navigate("/Home");
   }
-  function navigatePagetocontact() {
-    navigate("/Contact");
+  function navigatePageToLogin() {
+    navigate("/");
   }
   function navigatePagetoPhoto() {
     navigate("/Photo");
@@ -39,17 +39,18 @@ function NavigationBar() {
         </Link>
         <h6 onClick={navigatePagetoPhoto} className={style.opt} >Photo</h6>
         <h6 onClick={navigatePage} className={style.opt} >Registartion</h6>
+        <h6 onClick={navigatePageToLogin} className={style.opt} >Login</h6>
       </Container>
       <NavDropdown
         className={style.dropdown}
         title="📸"
         id="basic-nav-dropdown"
       >
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+        <NavDropdown.Item href="/Home">Home</NavDropdown.Item>
+        <NavDropdown.Item href="Photo">Photo</NavDropdown.Item>
+        <NavDropdown.Item href="/">Login</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+        <NavDropdown.Item href="/Registration">Registration</NavDropdown.Item>
       </NavDropdown>
     </Navbar>
   );
