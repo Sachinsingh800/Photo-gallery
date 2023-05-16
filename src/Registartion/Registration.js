@@ -45,6 +45,7 @@ const navigate = useNavigate()
     setEmail(" ")
     setPassword(" ")
     setName(" ")
+    navigate("/Home")
     }
 
   return (

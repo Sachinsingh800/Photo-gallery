@@ -9,7 +9,10 @@
 .links{
     margin-right: 2rem;
 }
-
+.opt{
+    text-decoration: none;
+    color: white;
+}
 .opt:hover{
 color: blue;
 }
